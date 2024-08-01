@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, } from 'react-router-dom';
 import CluePage from './components/CluePage';
 import FinalPage from './components/FinalPage';
 import HomePage from './components/HomePage';
