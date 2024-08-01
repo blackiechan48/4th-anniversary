@@ -1,25 +1,105 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import CluePage from './components/CluePage';
+import FinalPage from './components/FinalPage';
+import HomePage from './components/HomePage';
 
-function App() {
+const clues = [
+  {
+    id: 1,
+    type: 'multiple-choice',
+    question: "We got married later than planned because of lockdown, what was our initial planned date?",
+    options: ["June 12th", "June 20th", "July 20th", "July 15th"],
+    answer: "June 20th",
+    nextClue: "/clue2"
+  },
+  {
+    id: 2,
+    type: 'open-ended',
+    question: "Where did we take our first vacation together?",
+    answer: "Calella",
+    nextClue: "/clue3"
+  },
+  {
+    id: 3,
+    type: 'multiple-choice',
+    question: "Where were we going to when you first found out i dont like to walk?",
+    options: ["On a walking tour","Walking to a light house","On a walking date","We werent even walking"],
+    answer: "Walking to a light house",
+    nextClue: "/clue4"
+  },
+  {
+    id: 4,
+    type: 'multiple-choice',
+    question: "What was the first song i heard you sing like a wierdo",
+    options: ["Some rock song", "Airplanes by Bob", "A song by pink", "party in the USA"],
+    answer: "Airplanes by Bob",
+    nextClue: "/clue5"
+  },
+  {
+    id: 5,
+    type: 'open-ended',
+    question: "what did we name my gray hair?",
+    answer: "Graham",
+    nextClue: "/clue6"
+  },
+  {
+    id: 6,
+    type: 'riddle',
+    question: "Our second date cost £50, how much did i have in my bank account on the day of the date ?",
+    answer: "60",
+    nextClue: "/clue7"
+  },
+  {
+    id: 7,
+    type: 'multiple-choice',
+    question: "Where did we go on our second date",
+    options: ["Dessert shop", "Ferris Wheel", "Ice skating", "Cinema"],
+    answer: "Ferris Wheel",
+    nextClue: "/clue8"
+  },
+  {
+    id: 8,
+    type: 'multiple-choice',
+    question: "What position did i play on the field when i played american football?",
+    options: ["Running back","Quater back","Line Backer","O-Lineman"],
+    answer: "Line Backer",
+    nextClue: "/clue9"
+  },
+  {
+    id: 9,
+    type: 'multiple-choice',
+    question: "We got really drunk when we found out your brother was getting engaged, when was the other time we got really drunk?",
+    options: ["in barcelona","at the comedy club","when we were drinking all the alcohol in the house","Georgie and Arthurs wedding"],
+    answer: "at the comedy club",
+    nextClue: "/clue10"
+  },
+  {
+    id: 10,
+    type: 'multiple-choice',
+    question: "Which restaurant have we NOT been to together?",
+    options: ["TGI Friday", "Weatherspoons", "Chiquito", "Simpsons"],
+    answer: "Simpsons",
+    nextClue: "/final"
+  }
+];
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        {clues.map((clue, index) => (
+          <Route 
+            key={index} 
+            path={`/clue${clue.id}`} 
+            element={<CluePage clue={clue} />} 
+          />
+        ))}
+        <Route path="/final" element={<FinalPage />} />
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;
