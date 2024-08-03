@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import logo from './anniversary-logo-.png';
@@ -13,7 +13,8 @@ const HomePageContainer = styled.div`
   box-sizing: border-box;
   background-size: cover;
   background-position: center;
-
+  position: relative; /* Allows positioning of header and footer absolutely within this container */
+  
   @media (max-width: 768px) {
     padding: 10px;
     height: auto;
@@ -27,16 +28,12 @@ const Header = styled.header`
   background-color: rgba(0, 0, 0, 0.6);
   color: orange;
   font-size: clamp(2rem, 4vw, 5.5rem);
-  position: absolute;
-  top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
   z-index: 1;
-
-  @media (max-width: 768px) {
-    padding: 5px 10px;
-  }
 `;
 
 const Logo = styled.img`
@@ -54,10 +51,6 @@ const Footer = styled.footer`
   font-size: clamp(0.8rem, 2.5vw, 1rem);
   position: absolute;
   bottom: 0;
-
-  @media (max-width: 768px) {
-    padding: 5px 10px;
-  }
 `;
 
 const VideoContainer = styled.div`
@@ -65,7 +58,7 @@ const VideoContainer = styled.div`
   width: 80%;
   max-width: 600px;
   z-index: 0;
-
+  
   @media (max-width: 768px) {
     width: 100%;
     margin-top: 100px;
@@ -93,17 +86,15 @@ const StartButton = styled.button`
 
 const HomePage = () => {
   const navigate = useNavigate();
-  
 
   const handleStartClick = () => {
-    
     navigate('/clue1');
   };
 
   return (
     <HomePageContainer>
       <Header>
-        <Logo src={logo} alt="Logo" />
+        <Logo src={logo} alt="Anniversary Logo" />
         Our Special Day
       </Header>
 
@@ -122,8 +113,6 @@ const HomePage = () => {
       <StartButton onClick={handleStartClick}>Start Your Scavenger Hunt</StartButton>
 
       <Footer>Happy Anniversary ❤️ Love you lots</Footer>
-
-    
     </HomePageContainer>
   );
 };
