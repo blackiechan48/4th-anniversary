@@ -11,7 +11,6 @@ const CluePageContainer = styled.div`
   padding: 20px;
   box-sizing: border-box;
   background-color: #f0f0f0;
-  background-image: url("/background.png"); 
   background-size: cover;
   background-position: center;
 
@@ -23,7 +22,7 @@ const CluePageContainer = styled.div`
 
 const Question = styled.h1`
   font-size: 1.5rem;
-  color: white;  /* Corrected to use the 'color' property */
+  color: red;  
   text-align: center;
 
   @media (max-width: 768px) {

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import logo from './anniversary-logo-.png';  
+import logo from './anniversary-logo-.png';
 
 const HomePageContainer = styled.div`
   display: flex;
@@ -11,7 +11,6 @@ const HomePageContainer = styled.div`
   height: 100vh;
   padding: 20px;
   box-sizing: border-box;
-  background-image: url("/wedding photo.JPG"); 
   background-size: cover;
   background-position: center;
 
@@ -27,28 +26,23 @@ const Header = styled.header`
   text-align: center;
   background-color: rgba(0, 0, 0, 0.6);
   color: orange;
-  font-size: 5.5rem;
+  font-size: clamp(2rem, 4vw, 5.5rem);
   position: absolute;
   top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 
   @media (max-width: 768px) {
-    font-size: 1.2rem;
     padding: 5px 10px;
   }
 `;
 
 const Logo = styled.img`
-  width: 50px;
-  height: 50px;
+  width: clamp(40px, 5vw, 50px);
+  height: clamp(40px, 5vw, 50px);
   margin-right: 10px;
-
-  @media (max-width: 768px) {
-    width: 40px;
-    height: 40px;
-  }
 `;
 
 const Footer = styled.footer`
@@ -57,53 +51,52 @@ const Footer = styled.footer`
   text-align: center;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
   position: absolute;
   bottom: 0;
 
   @media (max-width: 768px) {
-    font-size: 0.8rem;
     padding: 5px 10px;
   }
 `;
 
 const VideoContainer = styled.div`
-  margin-top: 150px;
+  margin-top: clamp(100px, 15vw, 150px);
   width: 80%;
   max-width: 600px;
+  z-index: 0;
 
   @media (max-width: 768px) {
-    margin-top: 100px;
     width: 100%;
+    margin-top: 100px;
   }
 `;
 
 const StartButton = styled.button`
-  padding: 10px 20px;
-  margin-bottom: 100px;
+  padding: clamp(8px, 1.5vw, 10px) clamp(16px, 3vw, 20px);
+  margin-bottom: clamp(50px, 10vw, 100px);
   background-color: orange;
   color: white;
   border: none;
   border-radius: 5px;
-  text-decoration: none;
-  text-align: center;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  cursor: pointer;
 
   &:hover {
     background-color: red;
   }
 
   @media (max-width: 768px) {
-    font-size: 1rem;
-    padding: 8px 16px;
     margin-bottom: 50px;
   }
 `;
 
 const HomePage = () => {
   const navigate = useNavigate();
+  
 
   const handleStartClick = () => {
+    
     navigate('/clue1');
   };
 
@@ -127,8 +120,10 @@ const HomePage = () => {
       </VideoContainer>
 
       <StartButton onClick={handleStartClick}>Start Your Scavenger Hunt</StartButton>
-      
+
       <Footer>Happy Anniversary ❤️ Love you lots</Footer>
+
+    
     </HomePageContainer>
   );
 };

@@ -10,19 +10,24 @@ const CluePageContainer = styled.div`
   height: 100vh;
   padding: 20px;
   box-sizing: border-box;
-  background-image: url("/bali.png"); 
   background-size: cover;
   background-position: center;
 
   @media (max-width: 768px) {
     padding: 10px;
     height: auto;
+  }
 `;
 
 const Question = styled.h1`
-  font-size: 1.5rem;
-  color:white;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  color: black;
   text-align: center;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 15px;
+  }
 `;
 
 const OptionButton = styled.button`
@@ -35,15 +40,25 @@ const OptionButton = styled.button`
   cursor: pointer;
   width: 80%;
   max-width: 300px;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: red;
+ 
+
+  @media (max-width: 768px) {
+    padding: 8px 16px;
+    margin: 5px 0;
   }
 `;
 
 const ErrorMessage = styled.p`
   color: red;
   margin-top: 10px;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+
+  @media (max-width: 768px) {
+    margin-top: 8px;
+  }
 `;
 
 const MultipleChoiceClue = ({ clue }) => {

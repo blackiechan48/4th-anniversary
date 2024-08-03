@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 import Confetti from 'react-confetti';
 
+// Styled-components for the page layout
 const FinalPageContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,10 +18,11 @@ const FinalPageContainer = styled.div`
   @media (max-width: 768px) {
     padding: 10px;
     height: auto;
+  }
 `;
 
 const CongratsMessage = styled.h1`
-  font-size: 6rem;
+  font-size: 2.5rem;
   color: white;
   text-align: center;
   margin-bottom: 20px;
@@ -38,6 +40,7 @@ const fadeIn = keyframes`
 `;
 
 const PresentContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,14 +75,26 @@ const RevealButton = styled.button`
   }
 `;
 
+// Styled-component for making the image link
+const ImageLink = styled.a`
+  position: relative;
+  display: block;
+  width: 250px;
+  height: 250px;
+  text-decoration: none;
+`;
+
 const FinalPage = () => {
   const [revealed, setRevealed] = useState(false);
   const [confettiActive, setConfettiActive] = useState(false);
+  const audioRef = useRef(null);
 
   const handleRevealClick = () => {
     setRevealed(true);
     setConfettiActive(true);
-    ;
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
   };
 
   return (
@@ -88,14 +103,17 @@ const FinalPage = () => {
       {revealed ? (
         <>
           <PresentContainer>
-            <PresentImage src="/reveal.png" alt="Anniversary Present" />
-            <PresentText>Your special anniversary present is a romantic weekend getaway!</PresentText>
+            <ImageLink href="https://www.virginexperiencedays.co.uk/voucher/download?&token=a8fdfc15-bbef-4770-ad40-7a507bfa524a" target="_blank" rel="noopener noreferrer">
+              <PresentImage src="V exp.png" alt="Anniversary Present" loading="lazy" />
+            </ImageLink>
+            <PresentText>And In July 2025, we are going to America and doing a road trip!!</PresentText>
           </PresentContainer>
           {confettiActive && <Confetti />}
         </>
       ) : (
         <RevealButton onClick={handleRevealClick}>Click to Reveal Your Present</RevealButton>
       )}
+      <audio ref={audioRef} src="/susu trimed_01.mp3" />
     </FinalPageContainer>
   );
 };
