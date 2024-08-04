@@ -34,22 +34,24 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-  padding: 10px;
+  padding: 12px 15px;
   margin: 10px 0;
-  width: 80%;
+  width: 90%;
   max-width: 300px;
   border: 3px solid #ccc;
   border-radius: 5px;
   font-size: clamp(1rem, 3vw, 1.2rem);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 768px) {
     margin: 8px 0;
+    width: 100%;
   }
 `;
 
 const Button = styled.button`
-  padding: 10px 20px;
-  margin-top: 10px;
+  padding: 12px 25px;
+  margin-top: 12px;
   background-color: orange;
   color: white;
   border: none;
@@ -59,11 +61,12 @@ const Button = styled.button`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: red;
   }
 
   @media (max-width: 768px) {
-    margin-top: 8px;
+    margin-top: 10px;
+    width: 100%;
   }
 `;
 
@@ -99,6 +102,7 @@ const OpenEndedClue = ({ clue }) => {
           type="text"
           value={userAnswer}
           onChange={(e) => setUserAnswer(e.target.value)}
+          placeholder="Your answer..."
         />
         <Button type="submit">Submit Answer</Button>
       </Form>

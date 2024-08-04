@@ -38,14 +38,15 @@ const clues = [
   },
   {
     id: 5,
-    type: 'open-ended',
-    question: "what did we name my gray hair?",
-    answer: "Graham",
+    type: 'multiple-choice',
+    question: "Where were you when we had our first video call?",
+    options: ["Somerset","Dawlishw road","Hotel", "In the streets"],
+    answer: "In the streets",
     nextClue: "/clue6"
   },
   {
     id: 6,
-    type: 'riddle',
+    type: 'open-ended',
     question: "Our second date cost £50, how much did i have in my bank account on the day of the date ?",
     answer: "60",
     nextClue: "/clue7"
@@ -69,7 +70,7 @@ const clues = [
   {
     id: 9,
     type: 'multiple-choice',
-    question: "We got really drunk when we found out your brother was getting engaged, when was the other time we got really drunk?",
+    question: "We got really drunk when we found out your brother was getting engaged, when was the other time we got that  drunk?",
     options: ["in barcelona","at the comedy club","when we were drinking all the alcohol in the house","Georgie and Arthurs wedding"],
     answer: "at the comedy club",
     nextClue: "/clue10"
