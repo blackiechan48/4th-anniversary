@@ -32,7 +32,7 @@ const clues = [
     id: 4,
     type: 'multiple-choice',
     question: "What was the first song i heard you sing like a wierdo",
-    options: ["Some rock song", "Airplanes by Bob", "A song by pink", "party in the USA"],
+    options: ["Some rock song", "Airplanes by Bob", "A song by pink", "Party in the USA"],
     answer: "Airplanes by Bob",
     nextClue: "/clue5"
   },
@@ -46,9 +46,10 @@ const clues = [
   },
   {
     id: 6,
-    type: 'open-ended',
-    question: "Our second date cost £50, how much did i have in my bank account on the day of the date ?",
-    answer: "60",
+    type: 'multiple-choice',
+    question: "why did i buy you flowers for the first time ever?",
+    options: ["Im a romantic man","As a start to a date","To prove your mum wrong", "To aplogise"],
+    answer: "to prove your mum wrong",
     nextClue: "/clue7"
   },
   {
@@ -71,7 +72,7 @@ const clues = [
     id: 9,
     type: 'multiple-choice',
     question: "We got really drunk when we found out your brother was getting engaged, when was the other time we got that  drunk?",
-    options: ["in barcelona","at the comedy club","when we were drinking all the alcohol in the house","Georgie and Arthurs wedding"],
+    options: ["In barcelona","At the comedy club","When we were drinking all the alcohol at long nuke","Georgie and Arthurs wedding"],
     answer: "at the comedy club",
     nextClue: "/clue10"
   },
