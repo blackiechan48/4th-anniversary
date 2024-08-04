@@ -99,15 +99,10 @@ const HomePage = () => {
       </Header>
 
       <VideoContainer>
-        <iframe
-          width="100%"
-          height="315"
-          src="https://www.youtube.com/embed/WDd-jMYJiqo"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
+        <video width="100%" controls>
+          <source src="/video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </VideoContainer>
 
       <StartButton onClick={handleStartClick}>Start Your Scavenger Hunt</StartButton>

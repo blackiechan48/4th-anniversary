@@ -106,7 +106,7 @@ const FinalPage = () => {
             <ImageLink href="https://www.virginexperiencedays.co.uk/voucher/download?&token=a8fdfc15-bbef-4770-ad40-7a507bfa524a" target="_blank" rel="noopener noreferrer">
               <PresentImage src="V exp.png" alt="Anniversary Present" loading="lazy" />
             </ImageLink>
-            <PresentText>And In July 2025, we are going to America and doing a road trip!!</PresentText>
+            <PresentText>It's a very intriguing and exciting <strong>(especially for me)</strong> experience day And In July 2025, we are going to America and doing a road trip!!</PresentText>
           </PresentContainer>
           {confettiActive && <Confetti />}
         </>
