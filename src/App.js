@@ -49,7 +49,7 @@ const clues = [
     type: 'multiple-choice',
     question: "why did i buy you flowers for the first time ever?",
     options: ["Im a romantic man","As a start to a date","To prove your mum wrong", "To aplogise"],
-    answer: "to prove your mum wrong",
+    answer: "To prove your mum wrong",
     nextClue: "/clue7"
   },
   {
@@ -73,7 +73,7 @@ const clues = [
     type: 'multiple-choice',
     question: "We got really drunk when we found out your brother was getting engaged, when was the other time we got that  drunk?",
     options: ["In barcelona","At the comedy club","When we were drinking all the alcohol at long nuke","Georgie and Arthurs wedding"],
-    answer: "at the comedy club",
+    answer: "At the comedy club",
     nextClue: "/clue10"
   },
   {
