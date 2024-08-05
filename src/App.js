@@ -63,7 +63,7 @@ const clues = [
   {
     id: 8,
     type: 'multiple-choice',
-    question: "What position did i play on the field when i played american football?",
+    question: "What position did i play on the field when i played my last game of american football?",
     options: ["Running back","Quater back","Line Backer","O-Lineman"],
     answer: "Line Backer",
     nextClue: "/clue9"
