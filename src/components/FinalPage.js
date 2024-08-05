@@ -57,7 +57,7 @@ const PresentImage = styled.img`
 
 const PresentText = styled.p`
   font-size: 2.2rem;
-  color: yellow;
+  color: orange;
   text-align: center;
 `;
 
