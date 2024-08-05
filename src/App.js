@@ -47,7 +47,7 @@ const clues = [
   {
     id: 6,
     type: 'multiple-choice',
-    question: "why did i buy you flowers for the first time ever?",
+    question: "Why did i buy you flowers for the first time ever?",
     options: ["Im a romantic man","As a start to a date","To prove your mum wrong", "To aplogise"],
     answer: "To prove your mum wrong",
     nextClue: "/clue7"
